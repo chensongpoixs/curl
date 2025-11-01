@@ -1,9 +1,17 @@
+<testcase>
+<info>
+<keywords>
+HTTPS
+HTTP GET
+</keywords>
+</info>
+
 #
 # Server-side
 <reply>
 <data>
 HTTP/1.1 200 OK
-Date: Thu, 09 Nov 2010 14:49:00 GMT
+Date: Tue, 09 Nov 2010 14:49:00 GMT
 Server: test-server/fake
 Content-Length: 7
 
@@ -14,25 +22,29 @@ MooMoo
 #
 # Client-side
 <client>
+<features>
+SSL
+</features>
+<server>
+https
+</server>
  <name>
 simple HTTPS GET
  </name>
  <command>
-https://%HOSTIP:%HTTPSPORT/300
+-k https://%HOSTIP:%HTTPSPORT/%TESTNUMBER
 </command>
-</test>
+</client>
 
 #
 # Verify data after the test has been "shot"
 <verify>
-<strip>
-^User-Agent:.*
-</strip>
 <protocol>
-GET /300 HTTP/1.1
-Host: 127.0.0.1:8433
-Pragma: no-cache
-Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+GET /%TESTNUMBER HTTP/1.1
+Host: %HOSTIP:%HTTPSPORT
+User-Agent: curl/%VERSION
+Accept: */*
 
 </protocol>
 </verify>
+</testcase>

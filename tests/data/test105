@@ -1,3 +1,12 @@
+<testcase>
+<info>
+<keywords>
+FTP
+PASV
+TYPE A
+RETR
+</keywords>
+</info>
 # Server-side
 <reply>
 <data>
@@ -8,17 +17,23 @@ that FTP
 works
   so does it?
 </data>
+<servercmd>
+REPLY EPSV 500 no such command
+</servercmd>
 </reply>
 
 # Client-side
 <client>
+<server>
+ftp
+</server>
  <name>
 FTP user+password in URL and ASCII transfer
  </name>
  <command>
-ftp://userdude:passfellow@%HOSTIP:%FTPPORT/103 --use-ascii
+ftp://userdude:passfellow@%HOSTIP:%FTPPORT/%TESTNUMBER --use-ascii
 </command>
-</test>
+</client>
 
 # Verify data after the test has been "shot"
 <verify>
@@ -26,8 +41,11 @@ ftp://userdude:passfellow@%HOSTIP:%FTPPORT/103 --use-ascii
 USER userdude
 PASS passfellow
 PWD
+EPSV
 PASV
 TYPE A
-RETR 103
+RETR %TESTNUMBER
+QUIT
 </protocol>
 </verify>
+</testcase>

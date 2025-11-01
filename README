@@ -1,47 +1,55 @@
-                                  _   _ ____  _     
-                              ___| | | |  _ \| |    
-                             / __| | | | |_) | |    
-                            | (__| |_| |  _ <| |___ 
+                                  _   _ ____  _
+                              ___| | | |  _ \| |
+                             / __| | | | |_) | |
+                            | (__| |_| |  _ <| |___
                              \___|\___/|_| \_\_____|
 
 README
 
-  Curl is a command line tool for transfering data specified with URL
-  syntax. Find out how to use Curl by reading the curl.1 man page or the
+  Curl is a command line tool for transferring data specified with URL
+  syntax. Find out how to use curl by reading the curl.1 man page or the
   MANUAL document. Find out how to install Curl by reading the INSTALL
   document.
 
-  libcurl is a library that Curl is using to do its job. It is readily
-  available to be used by your software. Read the libcurl.5 man page to
-  find out how!
+  libcurl is the library curl is using to do its job. It is readily
+  available to be used by your software. Read the libcurl.3 man page to
+  learn how!
 
   You find answers to the most frequent questions we get in the FAQ document.
 
-  Study the LEGAL file for distribution terms and similar.
+  Study the COPYING file for distribution terms.
 
-  Always try the Curl web site for the latest news:
+  Those documents and more can be found in the docs/ directory.
 
-        http://curl.haxx.se
+CONTACT
 
-  The official download mirror sites are:
+  If you have problems, questions, ideas or suggestions, please contact us
+  by posting to a suitable mailing list. See https://curl.se/mail/
 
-        Sweden    -- ftp://ftp.sunet.se/pub/www/utilities/curl/
-        Germany   -- ftp://ftp.fu-berlin.de/pub/unix/network/curl/
+  All contributors to the project are listed in the THANKS document.
 
-  To download the very latest source off the CVS server do this:
+WEBSITE
 
-    cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl login
+  Visit the curl website for the latest news and downloads:
 
-  (just press enter when asked for password)
+        https://curl.se/
 
-    cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl co curl 
+GIT
 
-  (you'll get a directory named curl created, filled with the source code)
+  To download the very latest source off the GIT server do this:
 
-    cvs -d :pserver:anonymous@cvs.curl.sourceforge.net:/cvsroot/curl logout
-        
-  (you're off the hook!)
+    git clone https://github.com/curl/curl.git
+
+  (you will get a directory named curl created, filled with the source code)
+
+SECURITY PROBLEMS
+
+  Report suspected security problems via our HackerOne page and not in public!
+
+    https://hackerone.com/curl
+
+NOTICE
 
   Curl contains pieces of source code that is Copyright (c) 1998, 1999
-  Kungliga Tekniska Högskolan. This notice is included here to comply with the
+  Kungliga Tekniska HÃ¶gskolan. This notice is included here to comply with the
   distribution terms.

@@ -1,3 +1,12 @@
+<testcase>
+<info>
+<keywords>
+HTTP
+FAILURE
+non-existing host
+</keywords>
+</info>
+
 # Server-side
 <reply>
 <data>
@@ -6,13 +15,19 @@
 
 # Client-side
 <client>
+<server>
+none
+</server>
+<features>
+http
+</features>
  <name>
 attempt connect to non-existing host name
  </name>
  <command>
-non-existing-and-weeeeeeirdname
+--ipv4 non-existing-host.haxx.se.
 </command>
-</test>
+</client>
 
 # Verify data after the test has been "shot"
 <verify>
@@ -20,3 +35,4 @@ non-existing-and-weeeeeeirdname
 6
 </errorcode>
 </verify>
+</testcase>

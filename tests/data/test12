@@ -1,3 +1,12 @@
+<testcase>
+<info>
+<keywords>
+HTTP
+HTTP GET
+Content-Range
+</keywords>
+</info>
+
 # Server-side
 <reply>
 <data>
@@ -12,33 +21,34 @@ Content-Range: bytes 100-200/3527
 Connection: close
 Content-Type: text/html
 
-ink="#ffffff" vlink="#cccccc">
-<table width=100% cellspacing=0 cellpadding=0 border=0>
- <tr> 0123456
+..partial data returned from the
+server as a result of setting an explicit byte range
+in the request
 </data>
 </reply>
 
 # Client-side
 <client>
+<server>
+http
+</server>
  <name>
 HTTP range support
  </name>
  <command>
-http://%HOSTIP:%HOSTPORT/want/12 -r 100-200
+http://%HOSTIP:%HTTPPORT/want/%TESTNUMBER -r 100-200
 </command>
-</test>
+</client>
 
 # Verify data after the test has been "shot"
 <verify>
-<strip>
-^User-Agent:.*
-</strip>
 <protocol>
-GET /want/12 HTTP/1.1
+GET /want/%TESTNUMBER HTTP/1.1
+Host: %HOSTIP:%HTTPPORT
 Range: bytes=100-200
-Host: 127.0.0.1:8999
-Pragma: no-cache
-Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*
+User-Agent: curl/%VERSION
+Accept: */*
 
 </protocol>
 </verify>
+</testcase>

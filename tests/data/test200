@@ -1,4 +1,10 @@
-# Server-side
+<testcase>
+<info>
+<keywords>
+FILE
+</keywords>
+</info>
+
 <reply>
 <data>
 foo
@@ -11,21 +17,25 @@ moo
 
 # Client-side
 <client>
+<server>
+file
+</server>
  <name>
 basic file:// file
  </name>
- <command>
-file://localhost/%PWD/log/test200.txt
+<command option="no-include">
+file://localhost%FILE_PWD/log/test%TESTNUMBER.txt
 </command>
-<file name="log/test200.txt">
+<file name="log/test%TESTNUMBER.txt">
 foo
    bar
 bar
    foo
 moo
 </file>
-</test>
+</client>
 
 # Verify data after the test has been "shot"
 <verify>
 </verify>
+</testcase>
