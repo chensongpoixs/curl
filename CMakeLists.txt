@@ -443,8 +443,6 @@ endif()
 set(CURL_USE_OPENSSL true)
 
 set(OPENSSL_ROOT_DIR  ${DEPS_DIR}/openssl_1.1.0)
-#set(OPENSSL_ROOT_DIR ../openssl-1.1.1l/out/${BUILD_TYPE}/${CMAKE_SYSTEM_NAME})
-
 if(CURL_USE_OPENSSL)
   find_package(OpenSSL REQUIRED)
   set(SSL_ENABLED ON)
