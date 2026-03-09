@@ -449,11 +449,14 @@ message(status   "==   curl  ==>>>>>${DEPS_DIR}")
 
 
 set(OPENSSL_ROOT_DIR  ${DEPS_DIR}/openssl_1.1.0)
+#<<<<<<< HEAD
 #set(OPENSSL_ROOT_DIR ../openssl-1.1.1l/out/${BUILD_TYPE}/${CMAKE_SYSTEM_NAME})
 #endif()
 
 
 
+#=======
+#>>>>>>> 871ac57f1cf25479f693d08ed29b6bc83815e6c2
 if(CURL_USE_OPENSSL)
   find_package(OpenSSL REQUIRED)
   set(SSL_ENABLED ON)
