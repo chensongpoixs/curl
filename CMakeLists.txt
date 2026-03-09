@@ -442,8 +442,17 @@ endif()
 
 set(CURL_USE_OPENSSL true)
 
+
+#if (CMAKE_SYSTEM_NAME MATCHES "Windows")
+
+message(status   "==   curl  ==>>>>>${DEPS_DIR}")
+
+
 set(OPENSSL_ROOT_DIR  ${DEPS_DIR}/openssl_1.1.0)
 #set(OPENSSL_ROOT_DIR ../openssl-1.1.1l/out/${BUILD_TYPE}/${CMAKE_SYSTEM_NAME})
+#endif()
+
+
 
 if(CURL_USE_OPENSSL)
   find_package(OpenSSL REQUIRED)
